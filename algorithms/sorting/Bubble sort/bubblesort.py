@@ -19,20 +19,7 @@ def BubbleSort1 (num):
     time complexity for this sort is  O(n^2) time 
     which can be optimized more    
     """
-def BubbleSort2(num):
-    n = len(num)
-    
-    for i in range(n):
-        swapped = False
-        for j in range(i+1, n-i-1):
-            if num[j] > num[j+1]:
-                num[j], num[j+1] = num[j+1], num[j]
-                swapped = True
-
-
-        if swapped == False:
-            break
-    return num
+ 
 
 
 
