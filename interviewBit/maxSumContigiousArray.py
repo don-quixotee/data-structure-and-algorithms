@@ -2,16 +2,18 @@ class Solution:
     # @param A : tuple of integers
     # @return an integer
     def maxSubArray(self, A):
-        max_so_far = 0
-        current_max = 0
-        
-        for i in range(0,len(A)):
-            current_max += A[i]
-            if current_max < 0:
-                current_max = 0
-            elif max_so_far < current_max:
-                max_so_far = current_max
-            
-        return max_so_far
-        
-     
+        max_start, max_stop = 0, 1 # Start, Stop of maximum sub-array
+        curr = 0                   # pointer to current array
+        max_sum = A[0]         # Sum of maximum array
+        current_sum = 0            # sum of current array
+    
+        for i, elem in enumerate(A):
+            current_sum +=  elem
+    
+            if max_sum < current_sum:
+                max_sum = current_sum 
+            if current_sum < 0:
+                current_sum = 0
+
+        return  max_sum
+             
